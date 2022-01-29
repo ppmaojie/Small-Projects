@@ -8,7 +8,7 @@ It was supposed to be a very simple python testing to verify reading and writing
 But when put more effort on it, you start to have more and more ideas to make it fun. So why not to make it as a game. Probably I can learn more during the process.
 
 The game is basically about the lucky. Press Yes to generate a random number to see if it matches to the target number. If so you got jackpot and you will win the bonus,
-otherwise, you lose money. If you lose all your money, don't worry, you can lend from me and even the reward will be increased several times over, the risk is the same, you will
+otherwise, you lose money. If you lose all your money, don't worry, you can lend from me and even the reward will be increased several times over, so will the risk, you will
 lose your money more quickly. It's up to you!
 
 Just don't see the source code first and try it. Try to see if you can find anything hidden :)
