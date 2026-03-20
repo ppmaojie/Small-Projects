@@ -3,6 +3,7 @@
  */
 
 const mongoose = require('mongoose');
+const ObituaryService = require('../services/obituaryService');
 
 const obituarySchema = new mongoose.Schema({
   deceasedUserId: {
@@ -65,21 +66,26 @@ obituarySchema.methods.incrementShare = function() {
 
 // 实例方法：获取讣告文案
 obituarySchema.methods.getObituaryText = function(userNickname) {
-  const templates = [
-    `您关注的好友 ${userNickname} 已超过 XX 小时未签到，系统判定其可能已...节哀。`,
-    `${userNickname} 走了，带着没写完的 PPT 走了。`,
-    `${userNickname} 终于不用再早起了，愿天堂没有打卡。`,
-    `${userNickname} 走了，花呗还没还完。`,
-    this.customText || `${userNickname} 走了...`
-  ];
-  
-  let text = templates[this.templateId - 1] || templates[0];
-  
   // 计算死亡时长
-  const hours = Math.floor((new Date() - this.deathTime) / (1000 * 60 * 60));
-  text = text.replace('XX', hours);
+  const now = new Date();
+  const hours = Math.floor((now - this.deathTime) / (1000 * 60 * 60));
+  const minutes = Math.floor((now - this.deathTime) / (1000 * 60));
   
-  return text;
+  // 使用讣告服务生成文案
+  const data = {
+    nickname: userNickname,
+    hours,
+    minutes,
+    date: this.deathTime.toLocaleDateString('zh-CN'),
+    time: this.deathTime.toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' })
+  };
+  
+  // 如果是自定义模板 (ID=5)，使用自定义文案
+  if (this.templateId === 5 && this.customText) {
+    return this.customText.replace('{nickname}', userNickname);
+  }
+  
+  return ObituaryService.generateTextById(this.templateId, data);
 };
 
 module.exports = mongoose.model('Obituary', obituarySchema);

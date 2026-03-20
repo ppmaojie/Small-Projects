@@ -10,6 +10,7 @@ const aliveController = require('../controllers/aliveController');
 const contactController = require('../controllers/contactController');
 const graveyardController = require('../controllers/graveyardController');
 const leaderboardController = require('../controllers/leaderboardController');
+const templateController = require('../controllers/templateController');
 
 // 认证中间件
 const auth = require('../middleware/auth');
@@ -39,5 +40,17 @@ router.post('/graveyard/like', auth.authenticate, graveyardController.like);
 
 // 排行榜相关
 router.get('/leaderboard/:type', leaderboardController.getLeaderboard);
+
+// 讣告模板相关
+router.get('/templates', templateController.listTemplates);
+router.get('/templates/stats', templateController.getStats);
+router.get('/templates/all', templateController.listAllTemplates);
+router.get('/templates/:id', templateController.getTemplate);
+router.post('/templates', auth.authenticate, templateController.addTemplate);
+router.put('/templates/:id', auth.authenticate, templateController.updateTemplate);
+router.post('/templates/:id/disable', auth.authenticate, templateController.disableTemplate);
+router.post('/templates/:id/enable', auth.authenticate, templateController.enableTemplate);
+router.delete('/templates/:id', auth.authenticate, templateController.deleteTemplate);
+router.post('/templates/:id/test', auth.authenticate, templateController.testTemplate);
 
 module.exports = router;
