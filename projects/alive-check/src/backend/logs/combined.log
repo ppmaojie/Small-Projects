@@ -34,3 +34,8 @@
 {"level":"info","message":"MongoDB connected","timestamp":"2026-03-20T06:41:58.938Z"}
 {"level":"info","message":"Server running on port 3000","timestamp":"2026-03-20T06:42:21.588Z"}
 {"level":"info","message":"MongoDB connected","timestamp":"2026-03-20T06:42:21.626Z"}
+{"level":"info","message":"Running death detection job...","timestamp":"2026-03-20T06:45:00.641Z"}
+{"level":"info","message":"Running death detection job...","timestamp":"2026-03-20T06:50:00.714Z"}
+{"level":"info","message":"Running death detection job...","timestamp":"2026-03-20T06:55:00.794Z"}
+{"level":"info","message":"Running death detection job...","timestamp":"2026-03-20T07:00:00.867Z"}
+{"level":"info","message":"Running death detection job...","timestamp":"2026-03-20T07:05:00.942Z"}
