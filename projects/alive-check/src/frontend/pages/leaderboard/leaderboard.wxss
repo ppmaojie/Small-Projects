@@ -1,0 +1,138 @@
+/* 排行榜页面样式 */
+
+.container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1a1a1a 0%, #2d2d2d 100%);
+  padding: 40rpx;
+}
+
+/* 头部 */
+.header {
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #ffffff;
+  display: block;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #999999;
+  margin-top: 10rpx;
+  display: block;
+}
+
+/* Tab 切换 */
+.tabs {
+  display: flex;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20rpx;
+  padding: 10rpx;
+  margin-bottom: 30rpx;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 20rpx 0;
+  font-size: 26rpx;
+  color: #999999;
+  border-radius: 16rpx;
+  transition: all 0.3s;
+}
+
+.tab.active {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* 加载状态 */
+.loading {
+  text-align: center;
+  padding: 100rpx 0;
+  color: #999999;
+}
+
+/* 排行榜列表 */
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.rank-item {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20rpx;
+  padding: 20rpx;
+}
+
+.rank {
+  width: 60rpx;
+  text-align: center;
+}
+
+.rank-icon {
+  font-size: 36rpx;
+}
+
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: #333333;
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.nickname {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.unit {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.score {
+  text-align: right;
+}
+
+.score-value {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #FFD700;
+}
+
+/* 空状态 */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 150rpx 0;
+  gap: 20rpx;
+}
+
+.empty-icon {
+  font-size: 120rpx;
+}
+
+.empty-text {
+  font-size: 36rpx;
+  color: #999999;
+}

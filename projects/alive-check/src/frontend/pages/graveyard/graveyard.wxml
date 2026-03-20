@@ -1,0 +1,53 @@
+<!--墓地页面-->
+<view class="container">
+  <!-- 页面标题 -->
+  <view class="header">
+    <text class="title">🕯️ 公墓</text>
+    <text class="subtitle">缅怀已故好友</text>
+  </view>
+
+  <!-- 加载状态 -->
+  <view class="loading" wx:if="{{loading}}">
+    <text>加载中...</text>
+  </view>
+
+  <!-- 墓地列表 -->
+  <view class="graveyard-list" wx:if="{{!loading && graveyard.length > 0}}">
+    <view class="grave-item" wx:for="{{graveyard}}" wx:key="user._id">
+      <view class="grave-header">
+        <image class="avatar" src="{{item.user.avatar || '/assets/default-avatar.png'}}" mode="aspectFill" />
+        <view class="info">
+          <text class="nickname">{{item.user.nickname}}</text>
+          <text class="death-time">已故 {{item.deathHours}} 小时</text>
+        </view>
+      </view>
+      
+      <view class="grave-stats">
+        <view class="stat">
+          <text class="stat-icon">🌸</text>
+          <text class="stat-value">{{item.flowerCount}}</text>
+        </view>
+        <view class="stat">
+          <text class="stat-icon">💬</text>
+          <text class="stat-value">{{item.messageCount}}</text>
+        </view>
+      </view>
+      
+      <view class="grave-actions">
+        <button class="action-btn flower" bindtap="addFlower" data-deceaseduserid="{{item.user._id}}">
+          献花 🌸
+        </button>
+        <button class="action-btn message" bindtap="addMessage" data-deceaseduserid="{{item.user._id}}" data-nickname="{{item.user.nickname}}">
+          留言 💬
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty" wx:if="{{!loading && graveyard.length === 0}}">
+    <text class="empty-icon">🕊️</text>
+    <text class="empty-text">墓地空空如也</text>
+    <text class="empty-hint">大家都还活着呢</text>
+  </view>
+</view>

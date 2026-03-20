@@ -1,0 +1,73 @@
+<!--个人中心页面-->
+<view class="container">
+  <!-- 用户信息卡片 -->
+  <view class="profile-card">
+    <image class="avatar" src="{{userInfo.avatar || '/assets/default-avatar.png'}}" mode="aspectFill" />
+    <view class="user-info">
+      <text class="nickname">{{userInfo.nickname || '未登录'}}</text>
+      <text class="user-id">ID: {{userInfo.id ? userInfo.id.slice(-8) : ''}}</text>
+    </view>
+    <button class="edit-btn" bindtap="editProfile">编辑</button>
+  </view>
+
+  <!-- 统计数据 -->
+  <view class="stats-section">
+    <view class="stat-item">
+      <text class="stat-value">{{stats.consecutiveDays}}</text>
+      <text class="stat-label">连续存活天数</text>
+    </view>
+    <view class="stat-divider"></view>
+    <view class="stat-item">
+      <text class="stat-value">{{stats.totalDeaths}}</text>
+      <text class="stat-label">死亡次数</text>
+    </view>
+    <view class="stat-divider"></view>
+    <view class="stat-item">
+      <text class="stat-value">{{stats.totalFlowers}}</text>
+      <text class="stat-label">收到鲜花</text>
+    </view>
+  </view>
+
+  <!-- 功能列表 -->
+  <view class="menu-section">
+    <view class="menu-item" bindtap="setCycle">
+      <text class="menu-icon">⏰</text>
+      <text class="menu-text">存活周期设置</text>
+      <text class="menu-arrow">></text>
+    </view>
+    
+    <view class="menu-item">
+      <text class="menu-icon">👥</text>
+      <text class="menu-text">紧急联系人</text>
+      <text class="menu-arrow">></text>
+    </view>
+    
+    <view class="menu-item">
+      <text class="menu-icon">🏆</text>
+      <text class="menu-text">我的成就</text>
+      <text class="menu-arrow">></text>
+    </view>
+    
+    <view class="menu-item">
+      <text class="menu-icon">❓</text>
+      <text class="menu-text">帮助与反馈</text>
+      <text class="menu-arrow">></text>
+    </view>
+    
+    <view class="menu-item">
+      <text class="menu-icon">ℹ️</text>
+      <text class="menu-text">关于我们</text>
+      <text class="menu-arrow">></text>
+    </view>
+  </view>
+
+  <!-- 退出登录 -->
+  <view class="logout-section">
+    <button class="logout-btn" bindtap="logout">退出登录</button>
+  </view>
+
+  <!-- 版本信息 -->
+  <view class="version">
+    <text>还活着么 v1.0.0</text>
+  </view>
+</view>

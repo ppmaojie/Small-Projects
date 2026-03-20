@@ -1,0 +1,6 @@
+{"level":"info","message":"Server running on port 3000","timestamp":"2026-03-20T06:18:28.971Z"}
+{"level":"info","message":"MongoDB connected","timestamp":"2026-03-20T06:18:29.026Z"}
+{"level":"info","message":"SIGTERM received. Shutting down gracefully...","timestamp":"2026-03-20T06:18:36.679Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2026-03-20T06:18:41.563Z"}
+{"level":"info","message":"MongoDB connected","timestamp":"2026-03-20T06:18:41.612Z"}
+{"level":"info","message":"Running death detection job...","timestamp":"2026-03-20T06:20:00.586Z"}

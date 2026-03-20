@@ -1,0 +1,152 @@
+/* 墓地页面样式 */
+
+.container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1a1a1a 0%, #2d2d2d 100%);
+  padding: 40rpx;
+}
+
+/* 头部 */
+.header {
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #ffffff;
+  display: block;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #999999;
+  margin-top: 10rpx;
+  display: block;
+}
+
+/* 加载状态 */
+.loading {
+  text-align: center;
+  padding: 100rpx 0;
+  color: #999999;
+}
+
+/* 墓地列表 */
+.graveyard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30rpx;
+}
+
+.grave-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20rpx;
+  padding: 30rpx;
+}
+
+.grave-header {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: #333333;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.nickname {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.death-time {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+/* 统计 */
+.grave-stats {
+  display: flex;
+  gap: 40rpx;
+  margin-bottom: 20rpx;
+  padding: 20rpx 0;
+  border-top: 1rpx solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1rpx solid rgba(255, 255, 255, 0.1);
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.stat-icon {
+  font-size: 32rpx;
+}
+
+.stat-value {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* 操作按钮 */
+.grave-actions {
+  display: flex;
+  gap: 20rpx;
+}
+
+.action-btn {
+  flex: 1;
+  height: 80rpx;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  border: none;
+}
+
+.action-btn.flower {
+  background: linear-gradient(135deg, #FF69B4 0%, #FF1493 100%);
+  color: #ffffff;
+}
+
+.action-btn.message {
+  background: linear-gradient(135deg, #4FC3F7 0%, #03A9F4 100%);
+  color: #ffffff;
+}
+
+/* 空状态 */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 150rpx 0;
+  gap: 20rpx;
+}
+
+.empty-icon {
+  font-size: 120rpx;
+}
+
+.empty-text {
+  font-size: 36rpx;
+  color: #ffffff;
+}
+
+.empty-hint {
+  font-size: 28rpx;
+  color: #999999;
+}
