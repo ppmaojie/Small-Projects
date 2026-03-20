@@ -1,0 +1,281 @@
+/* 联系人管理页面样式 */
+
+.container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1a1a1a 0%, #2d2d2d 100%);
+  padding: 40rpx;
+  padding-bottom: 100rpx;
+}
+
+/* 头部 */
+.header {
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #ffffff;
+  display: block;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #999999;
+  margin-top: 10rpx;
+  display: block;
+}
+
+/* 添加按钮 */
+.add-btn-wrapper {
+  margin-bottom: 40rpx;
+}
+
+.add-btn {
+  width: 100%;
+  height: 90rpx;
+  border-radius: 45rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  border: none;
+}
+
+/* 区块 */
+.section {
+  margin-bottom: 40rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20rpx;
+}
+
+/* 加载状态 */
+.loading {
+  text-align: center;
+  padding: 60rpx 0;
+  color: #999999;
+}
+
+/* 邀请列表 */
+.invite-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.invite-item {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20rpx;
+  padding: 20rpx;
+}
+
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: #333333;
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.nickname {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.hint {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.actions {
+  display: flex;
+  gap: 10rpx;
+}
+
+.confirm-btn,
+.reject-btn {
+  padding: 10rpx 24rpx;
+  font-size: 24rpx;
+  border-radius: 20rpx;
+  border: none;
+}
+
+.confirm-btn {
+  background: #4CAF50;
+  color: #ffffff;
+}
+
+.reject-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #999999;
+}
+
+/* 联系人列表 */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20rpx;
+  padding: 20rpx;
+}
+
+.priority {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.delete-btn {
+  padding: 10rpx 24rpx;
+  font-size: 24rpx;
+  background: rgba(255, 71, 87, 0.2);
+  color: #ff4757;
+  border-radius: 20rpx;
+  border: none;
+}
+
+/* 空状态 */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100rpx 0;
+  gap: 20rpx;
+}
+
+.empty-icon {
+  font-size: 120rpx;
+}
+
+.empty-text {
+  font-size: 36rpx;
+  color: #999999;
+}
+
+.empty-hint {
+  font-size: 28rpx;
+  color: #666666;
+}
+
+/* 弹窗 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.modal-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #2d2d2d;
+  border-radius: 40rpx 40rpx 0 0;
+  padding: 40rpx;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.modal-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.modal-close {
+  font-size: 40rpx;
+  color: #999999;
+  padding: 10rpx;
+}
+
+/* 搜索框 */
+.search-box {
+  margin-bottom: 20rpx;
+}
+
+.search-input {
+  width: 100%;
+  height: 80rpx;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 40rpx;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  color: #ffffff;
+}
+
+/* 搜索结果 */
+.search-result {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.result-item {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20rpx;
+  padding: 20rpx;
+}
+
+.invite-btn {
+  padding: 10rpx 30rpx;
+  font-size: 24rpx;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  border-radius: 20rpx;
+  border: none;
+}
+
+/* 提示 */
+.modal-hint {
+  font-size: 24rpx;
+  color: #999999;
+  text-align: center;
+  padding: 20rpx;
+  border-top: 1rpx solid rgba(255, 255, 255, 0.05);
+}

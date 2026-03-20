@@ -1,0 +1,88 @@
+<!--模板选择页面-->
+<view class="container">
+  <!-- 页面标题 -->
+  <view class="header">
+    <text class="title">📝 选择讣告模板</text>
+    <text class="subtitle">选择你喜欢的风格</text>
+  </view>
+
+  <!-- 分类筛选 -->
+  <view class="category-tabs">
+    <view 
+      class="tab {{activeCategory === 'all' ? 'active' : ''}}" 
+      bindtap="switchCategory" 
+      data-category="all">
+      全部
+    </view>
+    <view 
+      class="tab {{activeCategory === 'standard' ? 'active' : ''}}" 
+      bindtap="switchCategory" 
+      data-category="standard">
+      标准
+    </view>
+    <view 
+      class="tab {{activeCategory === 'work' ? 'active' : ''}}" 
+      bindtap="switchCategory" 
+      data-category="work">
+      打工人
+    </view>
+    <view 
+      class="tab {{activeCategory === 'funny' ? 'active' : ''}}" 
+      bindtap="switchCategory" 
+      data-category="funny">
+      搞笑
+    </view>
+    <view 
+      class="tab {{activeCategory === 'meme' ? 'active' : ''}}" 
+      bindtap="switchCategory" 
+      data-category="meme">
+      梗文化
+    </view>
+  </view>
+
+  <!-- 加载状态 -->
+  <view class="loading" wx:if="{{loading}}">
+    <text>加载中...</text>
+  </view>
+
+  <!-- 模板列表 -->
+  <scroll-view class="template-list" scroll-y wx:if="{{!loading}}">
+    <view 
+      class="template-item {{selectedTemplateId === item.id ? 'selected' : ''}}"
+      wx:for="{{filteredTemplates}}"
+      wx:key="id"
+      bindtap="selectTemplate"
+      data-templateid="{{item.id}}">
+      
+      <view class="template-header">
+        <text class="template-name">{{item.name}}</text>
+        <text class="template-category" style="background: {{categories[item.category]?.color || '#999'}}">
+          {{categories[item.category]?.name || item.category}}
+        </text>
+      </view>
+      
+      <view class="template-preview">
+        {{item.template}}
+      </view>
+      
+      <view class="template-actions">
+        <button class="preview-btn" bindtap="previewTemplate" data-templateid="{{item.id}}" data-templatename="{{item.name}}">
+          预览
+        </button>
+      </view>
+    </view>
+
+    <!-- 空状态 -->
+    <view class="empty" wx:if="{{filteredTemplates.length === 0}}">
+      <text class="empty-icon">📭</text>
+      <text class="empty-text">该分类下暂无模板</text>
+    </view>
+  </scroll-view>
+
+  <!-- 底部确认按钮 -->
+  <view class="footer" wx:if="{{!loading && filteredTemplates.length > 0}}">
+    <button class="confirm-btn" bindtap="confirmSelect">
+      确认选择
+    </button>
+  </view>
+</view>

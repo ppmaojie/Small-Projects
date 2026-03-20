@@ -1,0 +1,93 @@
+<!--联系人管理页面-->
+<view class="container">
+  <!-- 页面标题 -->
+  <view class="header">
+    <text class="title">👥 紧急联系人</text>
+    <text class="subtitle">死亡时会自动通知他们</text>
+  </view>
+
+  <!-- 添加按钮 -->
+  <view class="add-btn-wrapper">
+    <button class="add-btn" bindtap="openAddModal">
+      + 添加联系人
+    </button>
+  </view>
+
+  <!-- 待确认邀请 -->
+  <view class="section" wx:if="{{pendingInvites.length > 0}}">
+    <view class="section-title">待确认邀请</view>
+    <view class="invite-list">
+      <view class="invite-item" wx:for="{{pendingInvites}}" wx:key="_id">
+        <image class="avatar" src="{{item.userId.avatar || '/assets/default-avatar.png'}}" mode="aspectFill" />
+        <view class="info">
+          <text class="nickname">{{item.userId.nickname}}</text>
+          <text class="hint">想把你设为紧急联系人</text>
+        </view>
+        <view class="actions">
+          <button class="confirm-btn" bindtap="confirmInvite" data-userid="{{item.userId._id}}">接受</button>
+          <button class="reject-btn" bindtap="rejectInvite" data-inviteid="{{item._id}}">拒绝</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 联系人列表 -->
+  <view class="section">
+    <view class="section-title">我的联系人 ({{contacts.length}}/3)</view>
+    
+    <!-- 加载状态 -->
+    <view class="loading" wx:if="{{loading}}">
+      <text>加载中...</text>
+    </view>
+    
+    <!-- 列表 -->
+    <view class="contact-list" wx:if="{{!loading && contacts.length > 0}}">
+      <view class="contact-item" wx:for="{{contacts}}" wx:key="_id">
+        <image class="avatar" src="{{item.contactUserId.avatar || '/assets/default-avatar.png'}}" mode="aspectFill" />
+        <view class="info">
+          <text class="nickname">{{item.contactUserId.nickname}}</text>
+          <text class="priority">优先级：{{item.priority === 1 ? '高' : (item.priority === 2 ? '中' : '低')}}</text>
+        </view>
+        <button class="delete-btn" bindtap="deleteContact" data-contactid="{{item._id}}" data-nickname="{{item.contactUserId.nickname}}">
+          删除
+        </button>
+      </view>
+    </view>
+    
+    <!-- 空状态 -->
+    <view class="empty" wx:if="{{!loading && contacts.length === 0}}">
+      <text class="empty-icon">👥</text>
+      <text class="empty-text">暂无联系人</text>
+      <text class="empty-hint">最多可添加 3 个联系人</text>
+    </view>
+  </view>
+</view>
+
+<!-- 添加联系人弹窗 -->
+<view class="modal" wx:if="{{showAddModal}}">
+  <view class="modal-mask" bindtap="closeAddModal"></view>
+  <view class="modal-content">
+    <view class="modal-header">
+      <text class="modal-title">添加联系人</text>
+      <text class="modal-close" bindtap="closeAddModal">✕</text>
+    </view>
+    
+    <view class="search-box">
+      <input class="search-input" placeholder="搜索用户昵称" bindinput="searchUser" />
+    </view>
+    
+    <view class="search-result" wx:if="{{searchResult}}">
+      <view class="result-item" wx:for="{{searchResult}}" wx:key="_id">
+        <image class="avatar" src="{{item.avatar || '/assets/default-avatar.png'}}" mode="aspectFill" />
+        <text class="nickname">{{item.nickname}}</text>
+        <button class="invite-btn" bindtap="inviteUser" data-userid="{{item._id}}">
+          邀请
+        </button>
+      </view>
+    </view>
+    
+    <view class="modal-hint">
+      搜索并邀请好友成为你的紧急联系人，死亡时会自动通知他们
+    </view>
+  </view>
+</view>

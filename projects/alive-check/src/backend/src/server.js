@@ -11,6 +11,7 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const cron = require('node-cron');
 const winston = require('winston');
+const path = require('path');
 
 const config = require('./config');
 const routes = require('./routes');
@@ -38,6 +39,10 @@ app.use(helmet()); // 安全头
 app.use(cors()); // 跨域
 app.use(express.json()); // JSON 解析
 app.use(express.urlencoded({ extended: true })); // URL 编码解析
+
+// 静态文件服务（分享卡片）
+app.use('/cards', express.static(path.join(__dirname, '../public/cards')));
+app.use('/public', express.static(path.join(__dirname, '../public')));
 
 // 速率限制
 const limiter = rateLimit({

@@ -11,6 +11,7 @@ const contactController = require('../controllers/contactController');
 const graveyardController = require('../controllers/graveyardController');
 const leaderboardController = require('../controllers/leaderboardController');
 const templateController = require('../controllers/templateController');
+const shareController = require('../controllers/shareController');
 
 // 认证中间件
 const auth = require('../middleware/auth');
@@ -52,5 +53,11 @@ router.post('/templates/:id/disable', auth.authenticate, templateController.disa
 router.post('/templates/:id/enable', auth.authenticate, templateController.enableTemplate);
 router.delete('/templates/:id', auth.authenticate, templateController.deleteTemplate);
 router.post('/templates/:id/test', auth.authenticate, templateController.testTemplate);
+
+// 分享相关
+router.get('/share/:id/card', shareController.getShareCard);
+router.post('/share/:id/wechat', auth.authenticate, shareController.shareToWechat);
+router.get('/share/:id/poster', shareController.generatePoster);
+router.get('/share/:id/stats', shareController.getShareStats);
 
 module.exports = router;

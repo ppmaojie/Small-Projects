@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/graveyard/graveyard",
     "pages/profile/profile",
-    "pages/leaderboard/leaderboard"
+    "pages/leaderboard/leaderboard",
+    "pages/template-select/template-select",
+    "pages/contacts/contacts"
   ],
   "window": {
     "backgroundTextStyle": "dark",
