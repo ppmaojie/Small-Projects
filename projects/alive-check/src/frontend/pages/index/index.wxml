@@ -1,0 +1,57 @@
+<!--首页 - 存活状态-->
+<view class="container">
+  <!-- 存活状态 -->
+  <view class="status-section {{status}}">
+    <view class="status-icon">
+      {{status === 'alive' ? '💀' : '🕯️'}}
+    </view>
+    
+    <view class="status-text">
+      {{status === 'alive' ? '你还活着' : '你已死亡'}}
+    </view>
+    
+    <!-- 倒计时 -->
+    <view class="countdown" wx:if="{{status === 'alive'}}">
+      <text class="countdown-time">{{timeLeftText}}</text>
+      <text class="countdown-label">距离被宣告死亡还有</text>
+    </view>
+    
+    <!-- 死亡信息 -->
+    <view class="death-info" wx:else>
+      <text class="death-time">死亡时间：{{deathTime}}</text>
+      <text class="death-duration">已死亡 {{deathHours}} 小时</text>
+    </view>
+  </view>
+  
+  <!-- 签到按钮 -->
+  <view class="action-section" wx:if="{{status === 'alive'}}">
+    <button class="checkin-btn" bindtap="onCheckin">
+      我还活着 ✅
+    </button>
+  </view>
+  
+  <!-- 复活按钮 -->
+  <view class="action-section" wx:else>
+    <button class="resurrect-btn" bindtap="resurrect">
+      我要复活 🙏
+    </button>
+  </view>
+  
+  <!-- 统计信息 -->
+  <view class="stats-section">
+    <view class="stat-item">
+      <text class="stat-value">{{consecutiveDays}}</text>
+      <text class="stat-label">连续存活天数</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-value">{{totalDeaths}}</text>
+      <text class="stat-label">死亡次数</text>
+    </view>
+  </view>
+  
+  <!-- 存活周期设置 -->
+  <view class="cycle-section">
+    <text class="cycle-label">当前存活周期：{{cycleHours}}小时</text>
+    <button class="cycle-btn" size="mini">修改</button>
+  </view>
+</view>

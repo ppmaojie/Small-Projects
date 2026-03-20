@@ -1,0 +1,147 @@
+/* 首页样式 */
+
+.container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1a1a1a 0%, #2d2d2d 100%);
+  padding: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 状态区域 */
+.status-section {
+  text-align: center;
+  margin-bottom: 60rpx;
+}
+
+.status-section.alive .status-icon {
+  font-size: 120rpx;
+  animation: breathe 2s infinite;
+}
+
+.status-section.dead .status-icon {
+  font-size: 120rpx;
+  filter: grayscale(100%);
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.status-text {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 20rpx;
+}
+
+/* 倒计时 */
+.countdown {
+  margin-top: 40rpx;
+}
+
+.countdown-time {
+  font-size: 80rpx;
+  font-weight: bold;
+  color: #ff4444;
+  font-family: 'Courier New', monospace;
+}
+
+.countdown-label {
+  font-size: 28rpx;
+  color: #999999;
+  margin-top: 10rpx;
+  display: block;
+}
+
+/* 死亡信息 */
+.death-info {
+  margin-top: 40rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.death-time,
+.death-duration {
+  font-size: 28rpx;
+  color: #999999;
+}
+
+/* 按钮区域 */
+.action-section {
+  margin-bottom: 60rpx;
+}
+
+.checkin-btn,
+.resurrect-btn {
+  width: 400rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  border: none;
+}
+
+.checkin-btn {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: #ffffff;
+  box-shadow: 0 8rpx 20rpx rgba(76, 175, 80, 0.4);
+}
+
+.resurrect-btn {
+  background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%);
+  color: #ffffff;
+  box-shadow: 0 8rpx 20rpx rgba(156, 39, 176, 0.4);
+}
+
+/* 统计区域 */
+.stats-section {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 60rpx;
+  padding: 40rpx;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20rpx;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.stat-label {
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 10rpx;
+}
+
+/* 周期设置 */
+.cycle-section {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.cycle-label {
+  font-size: 28rpx;
+  color: #999999;
+}
+
+.cycle-btn {
+  background: transparent;
+  border: 1rpx solid #666666;
+  color: #999999;
+  font-size: 24rpx;
+  padding: 10rpx 30rpx;
+}
