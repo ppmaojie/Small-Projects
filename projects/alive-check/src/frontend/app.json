@@ -13,37 +13,6 @@
     "navigationBarTitleText": "还活着么",
     "navigationBarTextStyle": "white"
   },
-  "tabBar": {
-    "color": "#999999",
-    "selectedColor": "#ffffff",
-    "backgroundColor": "#1a1a1a",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "assets/icons/home.png",
-        "selectedIconPath": "assets/icons/home-active.png"
-      },
-      {
-        "pagePath": "pages/graveyard/graveyard",
-        "text": "墓地",
-        "iconPath": "assets/icons/graveyard.png",
-        "selectedIconPath": "assets/icons/graveyard-active.png"
-      },
-      {
-        "pagePath": "pages/leaderboard/leaderboard",
-        "text": "排行榜",
-        "iconPath": "assets/icons/rank.png",
-        "selectedIconPath": "assets/icons/rank-active.png"
-      },
-      {
-        "pagePath": "pages/profile/profile",
-        "text": "我的",
-        "iconPath": "assets/icons/profile.png",
-        "selectedIconPath": "assets/icons/profile-active.png"
-      }
-    ]
-  },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

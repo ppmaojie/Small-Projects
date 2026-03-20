@@ -56,8 +56,8 @@
       
       <view class="template-header">
         <text class="template-name">{{item.name}}</text>
-        <text class="template-category" style="background: {{categories[item.category]?.color || '#999'}}">
-          {{categories[item.category]?.name || item.category}}
+        <text class="template-category" style="background: {{categories[item.category].color || '#999'}}">
+          {{categories[item.category].name || item.category}}
         </text>
       </view>
       
