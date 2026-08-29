@@ -1,0 +1,9 @@
+balance=10.0
+totalLend=0
+totalPunish=0
+totalBounce=0
+totalWin=0
+totalLose=0
+totalPayback=0
+bounce=1.0
+punish=1.0
