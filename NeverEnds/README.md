@@ -1,7 +1,3 @@
-# Small Projects
-This is a personal repository for my testing projects. There will be probably serveral small projects in Java, C# will be uploaded in the future.
-The projects are either from my college time or current testing.
-
 ## Current projects
 ### NeverEnds (Python)
 It was supposed to be a very simple python testing to verify reading and writing functions when I learnt that chapter in the training session. 
@@ -14,10 +10,6 @@ lose your money more quickly. It's up to you!
 Just don't see the source code first and try it. Try to see if you can find anything hidden :)
 
 Again, this is a rough version from a python beginner, pls forgive me if it looks too puerile to you.
-
-# 小型项目
-这是我的测试项目的个人存储库。Java, C#项目可能将来会陆续上传。
-这些项目要么来自我的大学阶段，要么来自当下做的测试实验。
 
 ## 当前项目
 ### 永不结束（Python）
